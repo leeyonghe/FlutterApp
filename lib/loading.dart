@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class loading extends StatefulWidget {
 
@@ -11,8 +12,18 @@ class loading extends StatefulWidget {
   }
 
 class _MyHomePageState extends State<loading> {
+
+  Future<void> fetchUserOrder() {
+// Imagine that this function is fetching user info but encounters a bug
+  return Future.delayed(Duration(seconds: 2),
+      () => throw Exception('Logout failed: user ID is invalid'));
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    fetchUserOrder();
+    
     return Scaffold(
       body: Center(
         child: Column(
