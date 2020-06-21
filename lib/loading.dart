@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/foundation.dart';
+import 'dart:developer' as developer;
 
 class loading extends StatefulWidget {
 
@@ -16,12 +17,15 @@ class _MyHomePageState extends State<loading> {
 
   Future<void> fetchUserOrder() {
       return Future.delayed(Duration(seconds: 2),() => {
-        debugPrint('fetchUserOrder')
+        // debugPrint('>>>>>>>>>>>>>>>>>>>>>>> fetchUserOrder')
+        developer.log('>>>>>>>>>>>>>>>>>>>>>>> fetchUserOrder', name: 'my.app.category')
       });
   }
 
   @override
   Widget build(BuildContext context) {
+
+    developer.log('>>>>>>>>>>>>>>>>>>>>>>> MyHomePageState', name: 'my.app.category');
 
     fetchUserOrder();
 
